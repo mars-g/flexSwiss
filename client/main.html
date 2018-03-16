@@ -1,0 +1,68 @@
+<head>
+  <title>Flexible Swiss Bracket</title>
+</head>
+
+<body>
+</body>
+
+<template name="userTemplate">
+  <button id='userButton'>{{userChoiceButton}}</button>
+  <h2> {{displayTag}} </h2>
+  <p> {{rank}} </p>
+  <br>
+  <p> {{Opponent}} </p>
+  <button id='findButton'>Find Match</button>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="closeButton" class="close">&times;</span>
+      <form id="playerChooseForm">
+      <select id="tagSelect" name="tag">
+         {{#each options}}
+            <option>{{tag}}</option>
+         {{/each}}
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+  </div>
+</template>
+
+
+<template name="admin">
+  <h2>For Admins Only!</h2>
+  <button id='addPlayer'>Add Player</button>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="closeButton" class="close">&times;</span>
+      <form id="addPlayerForm">
+        Name:<br>
+        <input type="text" name="name"><br>
+        Tag:<br>
+        <input type="text" name="tag"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  <br>
+  <br>
+  <p> Remove Player</p>
+  <form id="removeForm">
+    <select id="removeSelect">
+      {{#each playersList}}
+        <option>{{tag}}</option>
+      {{/each}}
+    </select>
+    <input type="submit" value="Submit">
+  </form>  
+  <br>
+  <br>
+  {{#each playersList}}
+    {{tag}} : {{rank}} <br>
+  {{/each}}
+  <br>
+  <br>
+  <button id="start">Start Tourney</button>
+</template>
+

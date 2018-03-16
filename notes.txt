@@ -1,0 +1,13 @@
+DB format should be
+
+Players:
+Tag	Rank Opponent
+
+Matches:
+Player1 Player2 Score
+
+
+
+
+TO DO:
+Add in inmatch display
