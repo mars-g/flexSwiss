@@ -127,7 +127,6 @@ Template.userTemplate.events({
     	}
 	},
 	'click #findButton' : function(event, template){
-		console.log(template.playerID.get())
 		if (Players.findOne({_id : template.playerID.get()}).opponent != null){
 			event.target.disabled = true;
 			return;
